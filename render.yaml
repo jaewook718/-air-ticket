@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: teumsae-air-ticket
+    runtime: docker
+    plan: free
+    branch: main
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    envVars:
+      - key: APP_PASSWORD
+        generateValue: true
+      - key: AMADEUS_ENV
+        value: test
